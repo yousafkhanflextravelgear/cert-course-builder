@@ -1,0 +1,45 @@
+/* ==========================================================================
+   NEUTRAL THEME — the default for every course built from this template.
+   - No brand, no web fonts: system font stacks only (nothing is fetched from a third party).
+   - Contrast-validated in light and dark: run
+       python ../../scripts/check_theme_contrast.py themes/neutral.css
+   - The two dark blocks MUST stay identical. One serves the OS preference (media query), the other the
+     in-app "Theme" button (data-theme="dark"). The checker fails the build if they drift.
+   To rebrand: copy this file, change colour/font values only, keep every token name, re-run the checker.
+   ========================================================================== */
+:root{
+  --ground:#F5F7FA; --surface:#FFFFFF; --surface-2:#EDF0F5; --surface-3:#DFE4EC;
+  --ink:#131C2B; --ink-2:#435369; --ink-3:#586880; --rule:#D0D7E2; --rule-2:#E3E8F0;
+  --accent:#1D5BBF; --accent-ink:#FFFFFF; --accent-soft:#E2ECFA;
+  --tip:#7E5400; --tip-soft:#FAEFD3; --upd:#0B6560; --upd-soft:#DFF1EF; --trap:#AE2E24; --trap-soft:#FBE6E3; --key:#1D5BBF; --key-soft:#E2ECFA;
+  --ok:#1B7240; --ok-soft:#E0F2E6; --bad:#AE2E24; --bad-soft:#FBE6E3;
+  --d0:#435369; --d1:#1D5BBF; --d2:#0B6560; --d3:#7E5400; --d4:#AE2E24; --d5:#6444A0;
+  --poster-a:#17233A;
+  --shadow:0 1px 2px rgba(19,28,43,.06),0 10px 30px -12px rgba(19,28,43,.18);
+  --f-display:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --r:8px; --pill:999px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1520; --surface:#162131; --surface-2:#1E2C41; --surface-3:#2A3B55;
+    --ink:#EAEFF6; --ink-2:#B5C1D3; --ink-3:#93A3BA; --rule:#2D3E58; --rule-2:#233349;
+    --accent:#6FA8FF; --accent-ink:#0E1520; --accent-soft:#1B3050;
+    --tip:#E5B964; --tip-soft:#33291A; --upd:#52C9BF; --upd-soft:#14332F; --trap:#F09A8E; --trap-soft:#3B211D; --key:#6FA8FF; --key-soft:#1B3050;
+    --ok:#6FCB8F; --ok-soft:#173A28; --bad:#F09A8E; --bad-soft:#3B211D;
+    --d0:#B5C1D3; --d1:#6FA8FF; --d2:#52C9BF; --d3:#E5B964; --d4:#F09A8E; --d5:#B9A6E8;
+    --poster-a:#0B1220;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+    --ground:#0E1520; --surface:#162131; --surface-2:#1E2C41; --surface-3:#2A3B55;
+    --ink:#EAEFF6; --ink-2:#B5C1D3; --ink-3:#93A3BA; --rule:#2D3E58; --rule-2:#233349;
+    --accent:#6FA8FF; --accent-ink:#0E1520; --accent-soft:#1B3050;
+    --tip:#E5B964; --tip-soft:#33291A; --upd:#52C9BF; --upd-soft:#14332F; --trap:#F09A8E; --trap-soft:#3B211D; --key:#6FA8FF; --key-soft:#1B3050;
+    --ok:#6FCB8F; --ok-soft:#173A28; --bad:#F09A8E; --bad-soft:#3B211D;
+    --d0:#B5C1D3; --d1:#6FA8FF; --d2:#52C9BF; --d3:#E5B964; --d4:#F09A8E; --d5:#B9A6E8;
+    --poster-a:#0B1220;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -12px rgba(0,0,0,.6);
+}

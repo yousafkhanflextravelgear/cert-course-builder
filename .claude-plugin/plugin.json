@@ -1,0 +1,10 @@
+{
+  "name": "cert-course-builder",
+  "version": "0.2.0",
+  "description": "Builds an interactive, applied-knowledge exam-prep course (web course, quizzes, mock exam, narration) for a professional certification, and checks it for answer-bias, accessibility and shareability before it is published.",
+  "author": {
+    "name": "Yousaf Khan"
+  },
+  "license": "MIT",
+  "keywords": ["education", "certification", "exam-prep", "course", "accessibility", "quiz"]
+}

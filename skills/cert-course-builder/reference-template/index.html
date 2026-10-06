@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam-prep course</title>
+<meta name="description" content="Interactive exam-prep course built with cert-course-builder.">
+<!-- THEME: swap this one line to rebrand (themes/neutral.css is the default; themes/harbor.css and themes/graphite.css are original alternative looks). -->
+<link rel="stylesheet" href="themes/neutral.css" id="theme">
+<link rel="stylesheet" href="engine.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar">
+    <button class="btn map-btn" id="mapBtn" aria-controls="rail" aria-expanded="false">Course map</button>
+    <div class="brand"><span class="brand-mark"></span><span class="brand-name"></span></div>
+    <span class="top-meta"></span>
+    <span class="spacer"></span>
+    <div class="prog" title="Slides viewed"><div class="bar"><span id="progFill"></span></div><span id="progTxt">0% viewed</span></div>
+    <button class="btn ghost" id="themeBtn" aria-label="Colour theme">Theme: auto</button>
+    <button class="btn ghost" id="focusBtn" aria-pressed="false">Focus mode</button>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Course map"><div id="railNav"></div><p class="disclaimer" id="disclaimer" hidden></p></nav>
+
+  <main class="stage" id="stage">
+    <div class="stage-scroll" id="stageScroll">
+      <div class="crumbs" id="crumbs"></div>
+      <article class="slide" id="slide" tabindex="-1" aria-live="polite"></article>
+      <details class="tx" id="tx" open>
+        <summary>Trainer narration <span class="tx-hint">Click any sentence to hear it from there</span></summary>
+        <div class="tx-body" id="txBody"></div>
+      </details>
+    </div>
+    <div class="dock">
+      <div class="controls">
+        <div class="ctl-group">
+          <button class="btn" id="prevBtn" aria-label="Previous slide">← Prev</button>
+          <span class="counter" id="counter">1 / 1</span>
+          <button class="btn primary" id="nextBtn" aria-label="Next slide">Next →</button>
+        </div>
+        <span class="ctl-sep"></span>
+        <div class="ctl-group">
+          <button class="btn" id="listenBtn"><span class="listen-dot"></span><span id="listenLbl">Listen</span></button>
+          <button class="btn ghost" id="autoBtn" aria-pressed="false" title="Narrate and advance automatically; pauses at quizzes and cases">Auto-play</button>
+          <label class="sr" for="rateSel">Narration speed</label>
+          <select class="dd" id="rateSel">
+            <option value="0.85">0.85×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option><option value="1.3">1.3×</option>
+          </select>
+          <label class="sr" for="voiceSel">Narration voice</label>
+          <select class="dd" id="voiceSel"><option value="">Default voice</option></select>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="exam" id="exam" hidden></div>
+
+<!-- Load order matters: config → helpers/blueprint → content → exam bank → (optional audio manifest) → engine. -->
+<script src="course.config.js" charset="utf-8"></script>
+<script src="data-core.js" charset="utf-8"></script>
+<script src="seg0.js" charset="utf-8"></script>
+<script src="seg1.js" charset="utf-8"></script>
+<script src="seg2.js" charset="utf-8"></script>
+<script src="seg3.js" charset="utf-8"></script>
+<script src="seg4.js" charset="utf-8"></script>
+<script src="exam-bank.js" charset="utf-8"></script>
+<!-- Add <script src="audio-manifest.js"> here once narration audio exists; without it the engine uses device voices. -->
+<script src="app.js" charset="utf-8"></script>
+</body>
+</html>

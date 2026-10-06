@@ -1,0 +1,42 @@
+/* ==========================================================================
+   HARBOR THEME — warm sand ground, deep teal accent, serif headings (system serif stack, no web fonts).
+   An original example of a second look for the same engine; copy it as the starting point for your own.
+   Validate after any edit:  python ../../scripts/check_theme_contrast.py themes/harbor.css
+   The two dark blocks MUST stay identical (OS preference vs the in-app Theme button).
+   ========================================================================== */
+:root{
+  --ground:#F6F2E9; --surface:#FFFFFF; --surface-2:#EFE9DB; --surface-3:#E3DBC7;
+  --ink:#17262B; --ink-2:#41545A; --ink-3:#566A70; --rule:#D8CFB9; --rule-2:#E7E0CE;
+  --accent:#0F6B73; --accent-ink:#FFFFFF; --accent-soft:#DCEEEF;
+  --tip:#7A5200; --tip-soft:#F7EBCB; --upd:#0F6B73; --upd-soft:#DCEEEF; --trap:#A63A2B; --trap-soft:#F9E3DD; --key:#0F6B73; --key-soft:#DCEEEF;
+  --ok:#237043; --ok-soft:#DFF1E4; --bad:#A63A2B; --bad-soft:#F9E3DD;
+  --d0:#41545A; --d1:#0F6B73; --d2:#237043; --d3:#7A5200; --d4:#A63A2B; --d5:#5E4B8F;
+  --poster-a:#10272C;
+  --shadow:0 1px 2px rgba(23,38,43,.06),0 10px 30px -12px rgba(23,38,43,.2);
+  --f-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --r:10px; --pill:999px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1A1E; --surface:#142429; --surface-2:#1C3036; --surface-3:#294248;
+    --ink:#EDF3F2; --ink-2:#B6C8C8; --ink-3:#94ABAC; --rule:#2B434A; --rule-2:#213840;
+    --accent:#5FC6CF; --accent-ink:#0C1A1E; --accent-soft:#17393F;
+    --tip:#E3B95F; --tip-soft:#33291A; --upd:#5FC6CF; --upd-soft:#17393F; --trap:#F0A090; --trap-soft:#3B2420; --key:#5FC6CF; --key-soft:#17393F;
+    --ok:#74CC93; --ok-soft:#173A28; --bad:#F0A090; --bad-soft:#3B2420;
+    --d0:#B6C8C8; --d1:#5FC6CF; --d2:#74CC93; --d3:#E3B95F; --d4:#F0A090; --d5:#B9A8E6;
+    --poster-a:#081316;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+    --ground:#0C1A1E; --surface:#142429; --surface-2:#1C3036; --surface-3:#294248;
+    --ink:#EDF3F2; --ink-2:#B6C8C8; --ink-3:#94ABAC; --rule:#2B434A; --rule-2:#213840;
+    --accent:#5FC6CF; --accent-ink:#0C1A1E; --accent-soft:#17393F;
+    --tip:#E3B95F; --tip-soft:#33291A; --upd:#5FC6CF; --upd-soft:#17393F; --trap:#F0A090; --trap-soft:#3B2420; --key:#5FC6CF; --key-soft:#17393F;
+    --ok:#74CC93; --ok-soft:#173A28; --bad:#F0A090; --bad-soft:#3B2420;
+    --d0:#B6C8C8; --d1:#5FC6CF; --d2:#74CC93; --d3:#E3B95F; --d4:#F0A090; --d5:#B9A8E6;
+    --poster-a:#081316;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 30px -12px rgba(0,0,0,.6);
+}

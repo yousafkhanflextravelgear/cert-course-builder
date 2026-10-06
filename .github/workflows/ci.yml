@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Unit tests and course checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements-dev.txt
+      - name: Unit tests (bias, contrast, publish-safety scripts)
+        run: python -m pytest -q
+      - name: Distractor bias gate on the demo course
+        run: python skills/cert-course-builder/scripts/check_distractor_bias.py skills/cert-course-builder/reference-template
+      - name: Theme contrast gate (light + dark, every theme)
+        run: python skills/cert-course-builder/scripts/check_theme_contrast.py skills/cert-course-builder/reference-template/themes/*.css
+      - name: Publish-safety scan of the whole repository
+        run: python skills/cert-course-builder/scripts/scan_publish_safety.py .
+      - name: JavaScript syntax check
+        run: |
+          for f in skills/cert-course-builder/reference-template/*.js skills/cert-course-builder/scripts/*.js skills/cert-course-builder/scripts/*.mjs; do node --check "$f"; done
+
+  browser:
+    name: Browser smoke test (Chromium)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright and Chromium
+        run: |
+          npm init -y >/dev/null
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Walk every slide, quizzes, mock exam, theme, 400px width, narration viewport
+        run: node skills/cert-course-builder/scripts/browser_smoke_test.mjs

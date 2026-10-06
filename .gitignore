@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+.venv/
+venv/
+.DS_Store
+# course builds are private until they pass the publish gates: keep them out of this repo
+/courses/
+/dist/
+*.local
+.publish-denylist
+.env
