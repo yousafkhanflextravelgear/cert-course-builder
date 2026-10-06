@@ -33,7 +33,7 @@ cd skills/cert-course-builder/reference-template
 python3 -m http.server 8000      # open http://localhost:8000
 ```
 
-(Once Pages is enabled, the same demo is published by CI: *Settings → Pages → Source → GitHub Actions*.)
+**Live demo:** https://yousafkhanflextravelgear.github.io/cert-course-builder/ (published from `reference-template/` by CI on every change; to host your own fork, set *Settings → Pages → Source → GitHub Actions*).
 
 **Use the skill with Claude**
 
