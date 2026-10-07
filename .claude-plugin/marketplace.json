@@ -1,0 +1,11 @@
+{
+  "name": "cert-course-builder",
+  "owner": { "name": "Yousaf Khan" },
+  "plugins": [
+    {
+      "name": "cert-course-builder",
+      "source": "./",
+      "description": "Builds an interactive exam-prep course for a professional certification and checks it before it is published."
+    }
+  ]
+}
