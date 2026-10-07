@@ -37,8 +37,15 @@ python3 -m http.server 8000      # open http://localhost:8000
 
 **Use the skill with Claude**
 
-Copy `skills/cert-course-builder/` into your Claude skills folder (for Claude Code: `~/.claude/skills/`), or install
-this repository as a plugin (`.claude-plugin/plugin.json`). Then ask, for example:
+Either copy `skills/cert-course-builder/` into your Claude skills folder (for Claude Code: `~/.claude/skills/`), or
+install it as a plugin:
+
+```
+/plugin marketplace add yousafkhanflextravelgear/cert-course-builder
+/plugin install cert-course-builder@cert-course-builder
+```
+
+Then ask, for example:
 
 > Build an exam-prep course for the *<certification>* exam.
 
